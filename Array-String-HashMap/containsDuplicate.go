@@ -7,7 +7,6 @@ func containsDuplicate(nums []int) bool {
 		_, ok := m[v]
 		m[v] = false
 		if ok {
-			m[v] = true
 			return true
 		}
 	}
