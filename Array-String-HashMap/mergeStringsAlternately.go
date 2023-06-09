@@ -2,28 +2,14 @@ package Array_String_HashMap
 
 func mergeAlternately(word1 string, word2 string) string {
 	rs := ""
+	i, j := 0, 0
 
-	if len(word1) == len(word2) {
-		for i := 0; i < len(word1); i++ {
-			rs += string(word1[i]) + string(word2[i])
-		}
-	} else if len(word1) > len(word2) {
-		for i := 0; i < len(word1); i++ {
-			if len(word2) <= i {
-				rs += string(word1[i])
-			} else {
-				rs += string(word1[i]) + string(word2[i])
-			}
-		}
-	} else {
-		for i := 0; i < len(word2); i++ {
-			if len(word1) <= i {
-				rs += string(word2[i])
-			} else {
-				rs += string(word1[i]) + string(word2[i])
-			}
-		}
+	for i < len(word1) && j < len(word2) {
+		rs += word1[i:j+1] + word2[i:j+1]
+		i++
+		j++
 	}
+	rs += word1[j:] + word2[j:]
 
 	return rs
 }
