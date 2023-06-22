@@ -1,26 +1,17 @@
 package Array_String_HashMap
 
-import "strings"
-
 func isAnagram(s string, t string) bool {
-	str := strings.Split(s+t, "")
-	m := make(map[string]int)
-
-	for i, v := range str {
-		_, ok := m[v]
-		if !ok {
-			m[v] = 1
-		} else {
-			if i < len(s) {
-				m[v]++
-			} else {
-				m[v]--
-			}
-		}
+	if len(s) != len(t) {
+		return false
 	}
 
-	for _, v := range m {
-		if v > 0 {
+	tmp := [26]int{}
+	for i := 0; i < len(s); i++ {
+		tmp[s[i]-'a']++
+	}
+	for i := 0; i < len(t); i++ {
+		tmp[t[i]-'a']--
+		if tmp[t[i]-'a'] < 0 {
 			return false
 		}
 	}
