@@ -1,4 +1,4 @@
-package two_pointers
+package Array_String_HashMap
 
 import (
 	"fmt"
