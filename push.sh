@@ -2,9 +2,11 @@
 
 message = $1
 
+pushMess=problem" "$message
+
 git add .
 
-git commit -m "problem $message"
+git commit -m "$pushMess"
 
 git push
 
