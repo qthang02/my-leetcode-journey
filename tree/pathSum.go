@@ -2,7 +2,7 @@ package tree
 
 func hasPathSum(root *TreeNode, targetSum int) bool {
 	if root == nil {
-		return true
+		return false
 	}
 
 	if root.Left == nil && root.Right == nil && root.Val == targetSum {
